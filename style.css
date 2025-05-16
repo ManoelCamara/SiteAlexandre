@@ -68,19 +68,54 @@ section {
     padding: 6rem 2rem;
 }
 
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
+#carrossel {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    background-color: #111;
 }
 
-.galeria img {
-    width: 100%;
-    aspect-ratio: 1 / 1; 
-    object-fit: cover; 
+.carrossel-container {
+    position: relative;
+    max-width: 400px;  
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.carrossel-container img {
+    width: 100%;  /* imagem ocupa 100% da largura do container */
+    height: auto; /* altura proporcional */
     border-radius: 8px;
 }
+
+.slide {
+    display: none;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.slide.ativo {
+    display: block;
+}
+
+.anterior, .proximo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 10;
+}
+
+.anterior { left: 10px; }
+.proximo { right: 10px; }
+
 
 form {
     display: flex;
